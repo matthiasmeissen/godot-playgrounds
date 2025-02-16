@@ -18,7 +18,6 @@ func _input(inp):
 		if inp.message == MIDI_MESSAGE_NOTE_ON:
 			if inp.channel == 0: gate_on_1()
 			if inp.channel == 1: gate_on_2()
-			if inp.channel == 3: gate_on_3()
 			
 		if inp.message == MIDI_MESSAGE_NOTE_OFF:
 			if inp.channel == 0: gate_off_1()
@@ -46,13 +45,6 @@ func gate_on_2():
 func gate_off_2():
 	print("Gate 2")
 	$CanvasLayer/ColorRect.material.set_shader_parameter("flip", 0)
-
-# Gate 3
-func gate_on_3():
-	print("Gate 3")
-
-func gate_off_3():
-	print("Gate 3")
 
 # Cv 1
 func cv_1(val):
