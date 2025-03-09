@@ -1,3 +1,34 @@
-[gd_scene format=3 uid="uid://depwwm3etp3gk"]
+[gd_scene load_steps=2 format=3 uid="uid://depwwm3etp3gk"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_5peyd"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_5peyd")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105614, 0.105614, 0.105614, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Loading Model"
